@@ -4,8 +4,7 @@
  */
 
 /* Import Tailwind directives for editor */
-@tailwind base;
-@tailwind components;
+@import "tailwindcss/preflight";
 @tailwind utilities;
 
 /* Editor-specific overrides */
