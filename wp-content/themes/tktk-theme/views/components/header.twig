@@ -1,0 +1,56 @@
+<div id="progress-bar"></div>
+
+<header class="header headroom" role="banner">
+	<div class="container">
+		<div class="header__wrapper">
+      <a class="header__logo no-underline!" href="{{ site.url }}" rel="home" aria-label="{{ site.name }}">
+				<p class="font-heading heading-3">TKTK</p>
+      </a>
+			<nav id="nav-main" class="header__nav" role="navigation" aria-label="Primary Navigation">
+				{% if primary %}
+					<ul class="header__nav-list">
+					{% for item in primary.get_items %}
+						<li class="{{ item.classes | join(' ') }}">
+							<a class="header__nav-link" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+						</li>
+					{% endfor %}
+					</ul>
+				{% endif %}
+				{% include "menu.twig" with {'items': primary.get_items} %}
+        <div class="menu-trigger">
+          <button 
+            class="menu-button w-[26px] aspect-square hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+            id="menu"
+            aria-label="Open menu"
+            aria-controls="menu-content"
+            aria-expanded="false">
+            <svg width="26" height="12" viewBox="0 0 26 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <line x1="0.526367" y1="2.16797" x2="25.7114" y2="2.16797" stroke="currentColor" stroke-width="3"/>
+                <line x1="0.526367" y1="10.2715" x2="25.7114" y2="10.2715" stroke="currentColor" stroke-width="3"/>
+            </svg>
+          </button>
+        </div>
+			</nav><!-- #nav -->
+		</div>
+	</div>
+</header>
+
+<div class="menu" id="menu-content" aria-hidden="true">
+	<div class="menu__inner">
+    <div class="menu__logo">
+      <p class="font-heading heading-3">Logo</p>
+    </div>
+		<ul>
+		{% for item in secondary.get_items %}
+			<li class="{{ item.classes | join(' ') }}">
+				<a class="mobile-nav-item" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+			</li>
+		{% endfor %}
+		</ul>
+    <div class="menu__close">
+			<button class="menu__close-button" aria-label="Close menu">
+				Close
+			</button>
+		</div>
+	</div>
+</div>
