@@ -11,7 +11,14 @@
       "text": "var(--wp--preset--color--black)",
       "background": "var(--wp--preset--color--white)"
     },
-    "elements": {}
+    "elements": {},
+    "blocks": {
+      "core/read-more": {
+        "color": {
+          "text": "var(--wp--preset--color--teal)"
+        }
+      }
+    }
   },
   "settings": {
     "color": {
@@ -169,31 +176,13 @@
       }
     },
     "blocks": {
-      "core/heading": {},
-      "core/button": {
+      "core/read-more": {
+        "typography": {
+          "fontSize": "0.875rem",
+          "fontWeight": "500"
+        },
         "color": {
-          "palette": [
-            {
-              "name": "black",
-              "slug": "black",
-              "color": "#000000"
-            },
-            {
-              "name": "White",
-              "slug": "white",
-              "color": "#ffffff"
-            },
-            {
-              "name": "Teal",
-              "slug": "teal",
-              "color": "#19514c"
-            },
-            {
-              "name": "Avacado",
-              "slug": "avacado",
-              "color": "#c2c76b"
-            }
-          ]
+          "text": "var(--wp--preset--color--teal)"
         }
       }
     }

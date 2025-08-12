@@ -1,0 +1,64 @@
+/**
+ * WordPress Block Styles
+ * Shared styles for WordPress blocks that apply to both editor and frontend
+ */
+
+/* List Block Styles - Override Tailwind's reset */
+.wp-block-list {
+  padding-left: 1.5rem;
+}
+
+.wp-block-list li {
+  margin: 0;
+  padding-left: 25px;
+}
+
+.wp-block-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Unordered lists - bullets */
+ul.wp-block-list {
+  list-style-type: disc;
+  margin-bottom: 20px;
+}
+
+/* Ordered lists - numbers */
+ol.wp-block-list {
+  list-style-type: decimal;
+}
+
+/* Nested lists */
+.wp-block-list .wp-block-list {
+  /* margin-top: 0.5rem;
+  margin-bottom: 0.5rem; */
+  /* margin-left: 1rem; */
+}
+
+/* Nested list style variations */
+ul.wp-block-list ul.wp-block-list {
+  list-style-type: circle;
+}
+
+ul.wp-block-list ul.wp-block-list ul.wp-block-list {
+  list-style-type: square;
+}
+
+/* Query Loop Block Styles */
+.wp-block-post-template {
+  padding: 0px;
+  margin: 20px 0 50px;
+}
+
+.wp-block-post-template > * {
+  background-color: white !important;
+  font-size: 12px;
+}
+
+.editor-styles-wrapper .wp-block-post-template > * {
+  padding: 0;
+}
+
+/* Read More Link Styles */
+.wp-block-read-more {
+}

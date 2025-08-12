@@ -4,8 +4,11 @@
  */
 
 /* Import Tailwind directives for editor */
-@import "tailwindcss/preflight";
-@tailwind utilities;
+@import 'tailwindcss';
+@config '../../tailwind.config.js';
+
+/* WordPress Block Overrides */
+@import './app/wordpress-blocks';
 
 /* Editor-specific overrides */
 .editor-styles-wrapper {
@@ -65,18 +68,18 @@
 
 /* Image styling in editor */
 .wp-block-image img {
-  border-radius: 16px;
+  border-radius:  0;
 }
 
 .wp-block-image.portrait-style img {
-  border-radius: 24px;
+  border-radius:  0;
   box-shadow: var(--wp--preset--shadow--subtle);
 }
 
 /* Button styling */
 .wp-block-button .wp-block-button__link {
   font-family: var(--wp--preset--font-family--pp-writer);
-  border-radius: 8px;
+  border-radius: 0;
   padding: 0.75rem 1.5rem;
   text-decoration: none;
   font-weight: 500;
@@ -108,11 +111,6 @@
   color: var(--wp--preset--color--white);
 }
 
-.wp-block-cover h1,
-.wp-block-cover h2 {
-  color: var(--wp--preset--color--white);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
 
 /* Signature image styling */
 .signature-image {

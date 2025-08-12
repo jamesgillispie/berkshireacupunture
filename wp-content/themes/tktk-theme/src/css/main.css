@@ -12,6 +12,9 @@
 @import './app/_components';
 @import './app/_utilities';
 
+/* WordPress Block Overrides */
+@import './app/wordpress-blocks';
+
 /* Typography */
 @import './app/typography';
 @import './app/animations';
