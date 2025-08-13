@@ -4,8 +4,8 @@
  */
 
 /* Import Tailwind directives for editor */
-@import 'tailwindcss';
-@config '../../tailwind.config.js';
+@import "tailwindcss/preflight";
+@tailwind utilities;
 
 /* WordPress Block Overrides */
 @import './app/wordpress-blocks';

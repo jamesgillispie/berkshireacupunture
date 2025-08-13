@@ -40,7 +40,7 @@ class Enqueue {
         }
 
         // Determine versioning strategy
-        if ( strpos( get_site_url(), '.test' ) !== false ) {
+        if ( strpos( get_site_url(), '.test' ) !== false || strpos( get_site_url(), '.local' ) !== false ) {
             $this->version = time(); // Cache bust in dev
         } else {
             $theme         = wp_get_theme();

@@ -8,6 +8,17 @@
   padding-left: 1.5rem;
 }
 
+.wp-block-navigation.has-background 
+.wp-block-navigation-item a:not(.wp-element-button), 
+.wp-block-navigation.has-background 
+.wp-block-navigation-submenu a:not(.wp-element-button) {
+  padding: 0;
+}
+
+.wp-block-navigation .wp-block-navigation-item {
+  padding: 12px 15px 14px;
+}
+
 .wp-block-list li {
   margin: 0;
   padding-left: 25px;
@@ -44,21 +55,218 @@ ul.wp-block-list ul.wp-block-list ul.wp-block-list {
   list-style-type: square;
 }
 
-/* Query Loop Block Styles */
-.wp-block-post-template {
-  padding: 0px;
-  margin: 20px 0 50px;
+.blog-post {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 10px;
+  .wp-block-read-more {
+      display: flex;
+      margin-top: auto;
+      margin-top: 15px;
+  }
+  figure {
+    padding: 0;
+    margin: 0;
+  }
+  .blog-post-date {
+    font-size: 14px;
+    margin: 10px 0 3px;
+  }
+  h2 {
+    height: 100%;
+    align-items: center;
+    display: flex;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
 }
 
-.wp-block-post-template > * {
-  background-color: white !important;
-  font-size: 12px;
+.editor-styles-wrapper p {
+  margin-bottom: 15px;
 }
 
-.editor-styles-wrapper .wp-block-post-template > * {
-  padding: 0;
+/* Testimonials Section - Nested CSS with better specificity */
+.testimonials-section,
+.editor-styles-wrapper .testimonials-section,
+.wp-block-group.testimonials-section {
+  .testimonials-title,
+  .wp-block-heading.testimonials-title,
+  h2.testimonials-title {
+    color: #4a7c59; /* primary sage green */
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  /* Grid container */
+  .testimonials-grid,
+  .wp-block-columns.testimonials-grid {
+    gap: 2rem;
+    margin-top: 5rem; /* Space for elevated avatars */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    /* Individual card column */
+    .testimonial-card,
+    .wp-block-column.testimonial-card {
+      position: relative;
+      flex: 1 1 300px;
+      max-width: 400px;
+
+      /* Inner card container */
+      .testimonial-card-inner,
+      .wp-block-group.testimonial-card-inner,
+      .wp-block.testimonial-card-inner,
+      &.wp-block-column .wp-block.testimonial-card-inner {
+        position: relative;
+        padding: 4rem 2rem 2rem 2rem; /* Extra top padding for avatar */
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        min-height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        &:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+      }
+
+      /* Avatar positioning */
+      .testimonial-avatar,
+      .wp-block-image.testimonial-avatar,
+      figure.testimonial-avatar {
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        margin: 0;
+        width: 100px;
+        height: 100px;
+
+        img {
+          border-radius: 50%;
+          border: 0px solid white;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          width: 100px;
+          height: 100px;
+          object-fit: cover;
+          background-color: #d1d5db; /* gray-300 for placeholder */
+        }
+      }
+
+      /* Quote text */
+      .testimonial-quote,
+      p.testimonial-quote {
+        font-style: italic;
+        font-size: 1rem;
+        line-height: 1.3;
+        color: #374151; /* gray-700 */
+        position: relative;
+        padding: 0 .5rem;
+        margin: 1.5rem 0 1rem 0;
+        text-align: center;
+
+        &::before {
+          content: "\201C"; /* Left double quotation mark */
+          font-size: 3rem;
+          color: #4a7c59; /* primary sage green */
+          position: absolute;
+          top: -10px;
+          left: 0;
+          font-family: serif;
+          line-height: 1;
+        }
+
+        &::after {
+          content: "\201D"; /* Right double quotation mark */
+          font-size: 3rem;
+          color: #4a7c59; /* primary sage green */
+          position: absolute;
+          bottom: -30px;
+          right: 0;
+          font-family: serif;
+          line-height: 1;
+        }
+      }
+
+      /* Author name */
+      .testimonial-author,
+      p.testimonial-author {
+        color: #6b7280; /* gray-500 */
+        font-weight: 500;
+        font-size: 1rem;
+        margin-top: 0.5rem;
+        text-align: center;
+      }
+    }
+  }
 }
 
-/* Read More Link Styles */
-.wp-block-read-more {
+/* Editor-specific overrides to ensure styles apply */
+.editor-styles-wrapper {
+  .testimonials-section,
+  .wp-block-group.testimonials-section,
+  .wp-block.testimonials-section {
+  }
+
+  .testimonial-card-inner,
+  .wp-block-group.testimonial-card-inner,
+  .wp-block.testimonial-card-inner,
+  .block-editor-block-list__block.testimonial-card-inner {
+    background-color: white !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    padding: 4rem 2rem 2rem 2rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 250px !important;
+    position: relative !important;
+  }
+
+  /* Target the exact editor class structure */
+  .block-editor-block-list__block.wp-block.testimonial-card-inner {
+    background-color: white !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    padding: 4rem 2rem 2rem 2rem !important;
+  }
+
+  /* Parent card styling */
+  .block-editor-block-list__block.testimonial-card {
+    position: relative !important;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .testimonials-section {
+    .testimonials-grid {
+      display: block;
+
+      .testimonial-card {
+        margin-bottom: 4rem;
+        max-width: 100%;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .testimonials-title {
+      font-size: 2rem;
+    }
+  }
 }

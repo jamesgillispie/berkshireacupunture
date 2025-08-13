@@ -1,3 +1,4 @@
+
 <?php
 /**
  * The tktk theme functions and definitions
@@ -74,6 +75,9 @@ add_filter( 'should_load_remote_block_patterns', '__return_false' );
  * Enqueue editor styles for block editor parity
  */
 function tktk_enqueue_editor_styles() {
+    // Add version parameter for cache busting
+    // $version = filemtime( get_template_directory() . '/build/editor-style.css' );
+    // add_editor_style( 'build/editor-style.css?ver=' . $version );
     add_editor_style( 'build/editor-style.css' );
 }
 add_action( 'after_setup_theme', 'tktk_enqueue_editor_styles' );

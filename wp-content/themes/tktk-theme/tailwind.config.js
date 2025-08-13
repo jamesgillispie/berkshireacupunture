@@ -19,7 +19,7 @@ module.exports = {
     'p-5', 'pt-5', 'pb-5', 'pl-5', 'pr-5', 'px-5', 'py-5',
     'p-6', 'pt-6', 'pb-6', 'pl-6', 'pr-6', 'px-6', 'py-6',
     // Other
-    'h-100', 'h-75', 'mt-auto'
+    'h-100', 'h-75', 'mt-auto', 'rounded-full', 'bg-white', 'rounded-lg', 'overflow-hidden'
   ],
   theme: {
     extend: {},
